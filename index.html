@@ -157,10 +157,12 @@ a:hover, button:hover, .link:hover {
   width: 100%;
   max-width: 420px;
   text-align: center;
-  padding: 36px 20px 120px;
+  padding: 36px 20px 80px;
   opacity: 0;
   transform: translateY(200px);
   animation: wrapFadeUp 3s ease .25s forwards;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 @keyframes wrapFadeUp {
@@ -308,6 +310,7 @@ footer.footer a {
 
 .social-icons {
   margin-top: 30px;
+  margin-bottom: 80px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -368,12 +371,12 @@ footer.footer a {
 
   body {
     zoom: 0.8;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .wrap {
     max-width: 90% !important;
-    padding: 10px !important;
+    padding: 10px 20px 20px !important;
     transform: none !important;
   }
 
@@ -389,6 +392,14 @@ footer.footer a {
     padding: 8px 14px !important;
     font-size: 0.85rem !important;
   }
+
+  .social-icons {
+    margin-bottom: 70px;
+  }
+
+  .page-footer {
+    font-size: 0.65rem;
+  }
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -401,7 +412,7 @@ footer.footer a {
 
   <div class="wrap">
     <img class="profile-pic" 
-         src="https://ik.imagekit.io/AntonMagdy/Profile%20Pictures/Reso.jpg" 
+         src="https://ik.imagekit.io/AntonMagdy/Profile%20Pictures/Hurghada_PP.jpeg?updatedAt=1761777373752" 
          alt="Hurghada Activites" />
     <h1>RESO⚡</h1>
     <p class="bio">The guy who called RESO⚡</p>
