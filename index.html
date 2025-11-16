@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Reso</title>
+
+<style>
+  :root{
+    --accent: rgba(255,255,255,0.15);
+    --accent-hover: rgba(255,255,255,0.3);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+
+/* Starry Background */
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stars Animation */
+#stars, #stars2, #stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  box-shadow: 
+    783px 1668px #FFF, 1223px 280px #FFF, 1638px 1725px #FFF, 1629px 596px #FFF,
+    472px 1397px #FFF, 1896px 676px #FFF, 1772px 1538px #FFF, 1650px 1000px #FFF,
+    345px 772px #FFF, 1059px 1105px #FFF, 1585px 1825px #FFF, 994px 1175px #FFF,
+    1926px 1401px #FFF, 1757px 273px #FFF, 1603px 1476px #FFF, 1815px 1165px #FFF,
+    135px 1735px #FFF, 1798px 1256px #FFF, 185px 720px #FFF, 1882px 1004px #FFF,
+    1286px 552px #FFF, 1719px 1858px #FFF, 1532px 524px #FFF, 1692px 1609px #FFF,
+    1695px 614px #FFF, 602px 1280px #FFF, 1936px 1432px #FFF, 1556px 1452px #FFF,
+    284px 1658px #FFF, 1864px 1307px #FFF, 1548px 1333px #FFF, 1607px 1622px #FFF,
+    783px 429px #FFF, 498px 1705px #FFF, 1529px 1372px #FFF, 1491px 1951px #FFF,
+    1642px 119px #FFF, 1067px 595px #FFF, 691px 1039px #FFF, 1080px 1868px #FFF,
+    1267px 1119px #FFF, 992px 371px #FFF, 1923px 1031px #FFF, 428px 1768px #FFF,
+    1695px 1541px #FFF, 1887px 1837px #FFF, 1333px 741px #FFF, 1929px 533px #FFF;
+  animation: animStar 50s linear infinite;
+}
+
+#stars:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+    783px 1668px #FFF, 1223px 280px #FFF, 1638px 1725px #FFF, 1629px 596px #FFF,
+    472px 1397px #FFF, 1896px 676px #FFF, 1772px 1538px #FFF, 1650px 1000px #FFF,
+    345px 772px #FFF, 1059px 1105px #FFF, 1585px 1825px #FFF, 994px 1175px #FFF,
+    1926px 1401px #FFF, 1757px 273px #FFF, 1603px 1476px #FFF, 1815px 1165px #FFF,
+    135px 1735px #FFF, 1798px 1256px #FFF, 185px 720px #FFF, 1882px 1004px #FFF,
+    1286px 552px #FFF, 1719px 1858px #FFF, 1532px 524px #FFF, 1692px 1609px #FFF,
+    1695px 614px #FFF, 602px 1280px #FFF, 1936px 1432px #FFF, 1556px 1452px #FFF,
+    284px 1658px #FFF, 1864px 1307px #FFF, 1548px 1333px #FFF, 1607px 1622px #FFF,
+    783px 429px #FFF, 498px 1705px #FFF, 1529px 1372px #FFF, 1491px 1951px #FFF,
+    1642px 119px #FFF, 1067px 595px #FFF, 691px 1039px #FFF, 1080px 1868px #FFF,
+    1267px 1119px #FFF, 992px 371px #FFF, 1923px 1031px #FFF, 428px 1768px #FFF,
+    1695px 1541px #FFF, 1887px 1837px #FFF, 1333px 741px #FFF, 1929px 533px #FFF;
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  box-shadow: 
+    1247px 733px #FFF, 1935px 1416px #FFF, 721px 970px #FFF, 1794px 1560px #FFF,
+    354px 1164px #FFF, 1562px 418px #FFF, 1018px 1747px #FFF, 498px 295px #FFF,
+    1843px 894px #FFF, 666px 1613px #FFF, 1449px 1003px #FFF, 1730px 256px #FFF,
+    1142px 1879px #FFF, 282px 1532px #FFF, 1609px 1283px #FFF, 935px 671px #FFF,
+    1998px 1092px #FFF, 1455px 1741px #FFF, 1823px 529px #FFF, 473px 1388px #FFF;
+  animation: animStar 100s linear infinite;
+}
+
+#stars2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    1247px 733px #FFF, 1935px 1416px #FFF, 721px 970px #FFF, 1794px 1560px #FFF,
+    354px 1164px #FFF, 1562px 418px #FFF, 1018px 1747px #FFF, 498px 295px #FFF,
+    1843px 894px #FFF, 666px 1613px #FFF, 1449px 1003px #FFF, 1730px 256px #FFF,
+    1142px 1879px #FFF, 282px 1532px #FFF, 1609px 1283px #FFF, 935px 671px #FFF,
+    1998px 1092px #FFF, 1455px 1741px #FFF, 1823px 529px #FFF, 473px 1388px #FFF;
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  box-shadow: 
+    1572px 1344px #FFF, 719px 463px #FFF, 1836px 1753px #FFF, 467px 1925px #FFF,
+    1253px 728px #FFF, 1947px 1082px #FFF, 589px 1516px #FFF, 1134px 291px #FFF,
+    1708px 619px #FFF, 325px 1397px #FFF;
+  animation: animStar 150s linear infinite;
+}
+
+#stars3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 
+    1572px 1344px #FFF, 719px 463px #FFF, 1836px 1753px #FFF, 467px 1925px #FFF,
+    1253px 728px #FFF, 1947px 1082px #FFF, 589px 1516px #FFF, 1134px 291px #FFF,
+    1708px 619px #FFF, 325px 1397px #FFF;
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
+}
+
+a, button, .link {
+  color: #2c3e50;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover, button:hover, .link:hover {
+  color: #000;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+.wrap {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 36px 20px 120px;
+  opacity: 0;
+  transform: translateY(200px);
+  animation: wrapFadeUp 3s ease .25s forwards;
+}
+
+@keyframes wrapFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.8);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  margin: 0 auto 18px;
+  display: block;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00baa4, #ffcb02, #00baa4);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveGradient 6s linear infinite;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+p.bio {
+  margin-bottom: 22px;
+  color: rgba(255,255,200,0.9);
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #001f3f, #003f5c, #004f6d, #002a38);
+  background-size: 300% 300%;
+  animation: linkGradient 8s ease infinite;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes linkGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.link:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #f8f4e1, #ffffff, #f8f4e1);
+  background-size: 200% 200%;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  fill: #fff;
+}
+
+.label {
+  flex: 1;
+  text-align: center;
+}
+
+.link.whatsapp .icon {
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+.link.whatsapp:hover .icon {
+  fill: #25D366;
+}
+
+.link.instagram .icon {
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+.link.instagram:hover .icon {
+  fill: #ff79d1;
+}
+
+.link.Facebook .icon {
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+.link.Facebook:hover .icon {
+  fill: #0b5394;
+}
+
+.link.vimeo .icon {
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+.link.vimeo:hover .icon {
+  fill: #1ab7ea;
+}
+
+footer.footer {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.8);
+  font-size: 10px !important;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+footer.footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.social-icons .fa-vimeo-v:hover {
+  color: #1ab7ea;
+}
+
+.social-icons .fa-instagram:hover {
+  color: #ff79d1;
+}
+
+.social-icons .fa-facebook-f:hover {
+  color: #0b5394;
+}
+
+.social-icons .fa-whatsapp:hover {
+  color: #25D366;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #fff;
+  z-index: 100;
+}
+
+.page-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.page-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  html {
+    font-size: 12px !important;
+  }
+
+  body {
+    zoom: 0.8;
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    max-width: 90% !important;
+    padding: 10px !important;
+    transform: none !important;
+  }
+
+  h1 {
+    font-size: 1.1rem !important;
+  }
+
+  p.bio {
+    font-size: 0.8rem !important;
+  }
+
+  .link {
+    padding: 8px 14px !important;
+    font-size: 0.85rem !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Starry Background -->
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <div class="wrap">
+    <img class="profile-pic" 
+         src="https://ik.imagekit.io/AntonMagdy/Profile%20Pictures/Reso.jpg" 
+         alt="Hurghada Activites" />
+    <h1>RESO⚡</h1>
+    <p class="bio">The guy who called RESO⚡</p>
+
+    <nav class="links">
+      <a class="link instagram" href="https://www.instagram.com/arsany007/" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zm5.25-2.75a1.125 1.125 0 1 0 1.125 1.125A1.125 1.125 0 0 0 17.25 5.75z" /></svg>
+        <span class="label">Instagram</span>
+      </a>
+
+      <a class="link Facebook" href="https://www.facebook.com/arsany.magdy.7/" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2 6.34 2 2 6.48 2 12.07c0 5 3.66 9.13 8.44 9.92v-7.03H8.07V12.07h2.37V9.88c0-2.34 1.4-3.63 3.52-3.63.99 0 2.02.18 2.02.18v2.22h-1.14c-1.12 0-1.46.69-1.46 1.4v1.67h2.49l-.4 2.89h-2.09v7.03C18.34 21.2 22 17.07 22 12.07z" /></svg>
+        <span class="label">Facebook</span>
+      </a>
+
+      <a class="link whatsapp" href="https://wa.me/+971553160319" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp icon" viewBox="0 0 16 16">
+          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+        <span class="label">WhatsApp</span>
+      </a>
+
+      <a class="link vimeo" href="https://vimeo.com/framedbyreso?fl=pp&fe=sh" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.37-8.29 6.37-1.409 0-2.578-1.294-3.553-3.881L5.322 11.4C4.603 8.816 3.834 7.522 3.01 7.522c-.179 0-.806.378-1.881 1.132L0 7.197c1.185-1.044 2.351-2.084 3.501-3.128C5.08 2.701 6.266 1.984 7.055 1.91c1.867-.18 3.016 1.1 3.447 3.838.465 2.953.789 4.789.971 5.507.539 2.45 1.131 3.674 1.776 3.674.502 0 1.256-.796 2.265-2.385 1.004-1.589 1.54-2.797 1.612-3.628.144-1.371-.395-2.061-1.614-2.061-.574 0-1.167.121-1.777.391 1.186-3.868 3.434-5.757 6.762-5.637 2.473.06 3.628 1.664 3.493 4.797l-.013.01z"/>
+        </svg>
+        <span class="label">Vimeo</span>
+      </a>
+    </nav>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/arsany007/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/arsany.magdy.7/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/+971553160319" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://vimeo.com/framedbyreso?fl=pp&fe=sh" target="_blank"><i class="fab fa-vimeo-v"></i></a>
+    </div>
+
+    <footer class="page-footer">
+      <p>© 2025 Anton Design</p>
+      <p><a href="https://wa.me/+201281358100" target="_blank">Contact Creator</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
